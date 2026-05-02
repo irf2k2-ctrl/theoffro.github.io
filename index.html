@@ -1,77 +1,57 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>OffrO Landing v3</title>
+<!doctype html><html lang='en'><head><meta charset='UTF-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/><title>OffrO Landing v3</title>
 <style>
 :root{--bg:#FDFBF6;--mint:#CDEBD6;--sage:#A9CDBA;--sand:#E7D7C8;--deep:#3E5F55;--brand:#0c7a4f;--txt:#1b3a32}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#fff;color:var(--txt)}
-.container{width:min(1180px,92%);margin:auto}.section{padding:72px 0}
-.top{position:sticky;top:0;background:rgba(253,251,246,.95);backdrop-filter:blur(7px);z-index:9;border-bottom:1px solid #eee}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}.btn{border:none;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer}
-.btn-primary{background:var(--deep);color:#fff}.btn-soft{background:#fff;color:var(--deep);border:2px solid var(--deep)}
-.hero{background:linear-gradient(170deg,#fff 0,var(--bg) 46%,var(--mint) 100%)}.hero-grid{display:grid;grid-template-columns:1fr .95fr 1fr;gap:26px;align-items:center}
-h1{font-size:clamp(2rem,4vw,3.6rem);margin:.3rem 0 1rem}h2{font-size:clamp(1.6rem,3vw,2.2rem)}p{color:#476058}
-.logo-svg{width:220px;max-width:100%}
-.toggle{display:inline-flex;border:1px solid #d7e2dd;border-radius:999px;padding:4px;background:#fff;gap:6px;margin:14px 0}
-.toggle button{padding:10px 16px;border-radius:999px;border:0;background:transparent;font-weight:700;color:#40645a;cursor:pointer}
-.toggle .active{background:var(--deep);color:#fff}
-.chips{display:grid;grid-template-columns:repeat(2,minmax(110px,1fr));gap:10px;margin-top:16px}.chip{background:#fff;border:1px solid #e4ece7;border-radius:12px;padding:10px;text-align:center;font-weight:700}
-.phone-wrap{position:relative;display:grid;place-items:center}.glow{position:absolute;width:86%;height:74%;border-radius:50%;background:radial-gradient(circle,var(--brand),var(--deep));opacity:.23;filter:blur(6px)}
-.phone{position:relative;width:min(360px,100%);aspect-ratio:9/19;border:10px solid #121212;border-radius:42px;background:#fff;box-shadow:0 16px 44px rgba(45,70,63,.25);padding:46px 14px 14px;transform:rotate(-4deg)}
-.phone:before{content:"";position:absolute;top:0;left:28%;width:44%;height:24px;background:#121212;border-radius:0 0 12px 12px}
-.screen{height:100%;border-radius:24px;border:1px solid #e2ebe6;overflow:hidden;background:#f8fcfa}
-.status{padding:10px 12px;display:flex;justify-content:space-between;font-weight:700;color:var(--deep)}
-.banner{margin:0 12px;background:linear-gradient(120deg,var(--deep),var(--brand));color:#fff;border-radius:14px;padding:14px}.cards{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{background:#fff;border:1px solid #e2ebe6;border-radius:12px;padding:10px;font-weight:700;color:#2a4a41}
-.features .item{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:12px 0;border-bottom:1px dashed #d4e3dc}.icon{width:52px;height:52px;border-radius:50%;background:linear-gradient(120deg,var(--brand),var(--deep));display:grid;place-items:center;color:#fff;font-weight:800}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.box{background:#fff;border:1px solid #e3ebe7;border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(62,95,85,.12)}
-.cta{background:linear-gradient(120deg,var(--deep),var(--brand));border-radius:20px;padding:28px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px}
-footer{margin-top:56px;background:var(--deep);color:#fff;padding:22px;text-align:center}
-@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid4{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}}
-</style></head>
-<body>
-<header class="top"><div class="container nav">
-<svg class="logo-svg" viewBox="0 0 760 210" aria-label="OffrO logo" role="img">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#3cbf63"/><stop offset="1" stop-color="#006b47"/></linearGradient></defs>
-  <circle cx="86" cy="120" r="62" fill="none" stroke="url(#g)" stroke-width="20"/>
-  <path d="M45 80 Q56 38 86 38 Q116 38 127 80" fill="none" stroke="#006b47" stroke-width="10" stroke-linecap="round"/>
-  <rect x="32" y="66" width="108" height="20" rx="10" fill="#59c85d"/>
-  <text x="168" y="145" font-size="120" font-family="Inter,Arial,sans-serif" font-weight="800" fill="#006b47">ffrO</text>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--txt);background:#fff}.container{width:min(1180px,92%);margin:auto}
+.top{position:sticky;top:0;background:rgba(253,251,246,.96);border-bottom:1px solid #e8efec;z-index:10}.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.btn{border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.btn-primary{background:var(--deep);color:#fff}.btn-soft{background:#fff;color:var(--deep);border:2px solid var(--deep)}
+.hero{padding:72px 0;background:linear-gradient(172deg,#fff,var(--bg) 40%,var(--mint) 100%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr 1fr;gap:26px;align-items:center}
+.logo{width:min(300px,95%)}h1{font-size:clamp(2rem,4vw,3.6rem);margin:.3rem 0 .9rem}h2{font-size:clamp(1.5rem,3vw,2.2rem)}h3{margin:.2rem 0}p{margin:.2rem 0;color:#4e665f;line-height:1.5}
+.switcher{margin:14px 0 10px;background:#fff;border:1px solid #d6e4de;border-radius:20px;padding:8px}.switch-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tab{border:0;border-radius:14px;padding:14px 12px;cursor:pointer;font-weight:800;font-size:1.1rem;display:grid;gap:4px;text-align:left;background:#edf5f2;color:#46655b}
+.tab small{font-size:.84rem;font-weight:600;opacity:.9}.tab.active{background:var(--deep);color:#fff;box-shadow:0 8px 26px rgba(62,95,85,.35);transform:scale(1.02)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.chips{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:10px}.chip{background:#fff;border:1px solid #e2ebe7;border-radius:12px;padding:10px;text-align:center;font-weight:700}
+.phone-wrap{position:relative;display:grid;place-items:center}.glow{position:absolute;width:86%;height:76%;border-radius:50%;background:radial-gradient(circle,var(--brand),var(--deep));opacity:.24;filter:blur(8px)}
+.phone{position:relative;width:min(355px,100%);aspect-ratio:9/19;border:10px solid #111;border-radius:40px;background:#fff;transform:rotate(-3deg);box-shadow:0 18px 48px rgba(44,69,61,.28);padding:44px 14px 14px}.phone:before{content:'';position:absolute;top:0;left:29%;width:42%;height:22px;border-radius:0 0 12px 12px;background:#111}
+.screen{height:100%;border:1px solid #e0ebe6;border-radius:23px;overflow:hidden;background:#f8fcfa}.status{padding:10px 12px;display:flex;justify-content:space-between;font-weight:700;color:var(--deep)}.banner{margin:0 12px;padding:14px;border-radius:14px;background:linear-gradient(120deg,var(--deep),var(--brand));color:#fff}.cards{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{background:#fff;border:1px solid #e2ebe6;border-radius:12px;padding:10px;font-weight:700}
+.features .item{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #d2e2db}.icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(120deg,var(--brand),var(--deep));color:#fff;font-weight:800}
+.sec{padding:68px 0}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.box{background:#fff;border:1px solid #e3ebe7;border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(62,95,85,.11)}
+.cta{border-radius:20px;padding:28px;background:linear-gradient(120deg,var(--deep),var(--brand));color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px}
+footer{margin-top:56px;background:var(--deep);color:#fff;padding:26px 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.social{display:flex;gap:12px}.s{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#ffffff1f;color:#fff;text-decoration:none}
+@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid4{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}.actions{flex-direction:column}}
+</style></head><body>
+<header class='top'><div class='container nav'>
+<svg class='logo' viewBox='0 0 820 230' aria-label='OffrO official logo'>
+<defs><linearGradient id='lg' x1='0' x2='1'><stop offset='0' stop-color='#53c962'/><stop offset='1' stop-color='#006b47'/></linearGradient></defs>
+<g transform='translate(16,16)'><circle cx='95' cy='108' r='72' fill='none' stroke='url(#lg)' stroke-width='24'/><rect x='20' y='44' width='150' height='30' rx='15' fill='#62d15f'/><path d='M55 64 Q65 16 95 16 Q125 16 135 64' fill='none' stroke='#006b47' stroke-width='14' stroke-linecap='round'/></g>
+<text x='205' y='158' font-family='Inter,Segoe UI,Arial' font-size='142' font-weight='800' fill='#006b47'>ffrO</text>
 </svg>
-<button class="btn btn-primary">Get Started</button></div></header>
-
-<section class="hero section"><div class="container hero-grid">
-<div>
-  <p style="font-weight:700;color:var(--brand)">One Platform. Two Powerful Experiences.</p>
-  <h1 id="heroTitle">Discover Deals Around You</h1>
-  <p id="heroDesc">Scan at partner stores, earn reward points, and redeem vouchers instantly.</p>
-  <div class="toggle"><button id="userBtn" class="active">User Theme</button><button id="merchantBtn">Merchant Theme</button></div>
-  <div style="display:flex;gap:10px"><button class="btn btn-primary" id="primaryCta">Download App</button><button class="btn btn-soft" id="secondaryCta">How it Works</button></div>
-  <div class="chips" id="chipWrap"></div>
-</div>
-
-<div class="phone-wrap"><div class="glow"></div><div class="phone"><div class="screen" id="screen"></div></div></div>
-
-<aside class="features"><h2 id="whyTitle">Why Users Love OffrO</h2><div id="featureList"></div></aside>
+<a class='btn btn-primary' href='https://google.com' target='_blank' rel='noopener'>Get Started</a>
+</div></header>
+<section class='hero'><div class='container hero-grid'>
+<div><p style='font-weight:700;color:var(--brand)'>One platform. Two complete journeys.</p><h1 id='heroTitle'>Discover Deals Around You</h1><p id='heroDesc'>Built with demo visuals only. No real customer or merchant data is shown.</p>
+<div class='switcher'><div class='switch-grid'><button id='userBtn' class='tab active'>👤 User Theme<small>Discover • Scan • Redeem</small></button><button id='merchantBtn' class='tab'>🏬 Merchant Theme<small>Manage • Promote • Retain</small></button></div></div>
+<div class='actions'><a id='primaryCta' class='btn btn-primary' href='https://google.com' target='_blank' rel='noopener'>Download App</a><a id='secondaryCta' class='btn btn-soft' href='#flow'>View User Flow</a></div><div id='chips' class='chips'></div></div>
+<div class='phone-wrap'><div class='glow'></div><div class='phone'><div id='screen' class='screen'></div></div></div>
+<aside class='features'><h2 id='whyTitle'>Why Users Love OffrO</h2><div id='featuresList'></div></aside>
 </div></section>
-
-<section class="section"><div class="container"><h2 style="text-align:center">Everything You Need to Grow</h2><div class="grid4" id="cards"></div></div></section>
-<section class="container"><div class="cta"><div><h2 style="margin:0">More Stores. More Deals. More Rewards.</h2><p style="color:#dff5ea">Built for merchants. Loved by customers.</p></div><button class="btn btn-soft" style="border-color:#fff;color:#fff">Contact Sales</button></div></section>
-<footer>© OffrO • Scan. Earn. Redeem.</footer>
-
+<section id='flow' class='sec'><div class='container'><h2 style='text-align:center'>Flow Tabs with Proper Descriptions</h2><div id='flowCards' class='grid4'></div></div></section>
+<section class='container'><div class='cta'><div><h2 style='margin:0'>More Stores. More Deals. More Rewards.</h2><p style='color:#ddf4ea'>All visuals are prepared for presentation/demo use only.</p></div><a class='btn btn-soft' style='border-color:#fff;color:#fff' href='mailto:hello@offro.app'>Contact Sales</a></div></section>
+<footer><div class='container foot'><div>© OffrO • Discover • Save • Earn</div><div class='social'>
+<a class='s' href='https://facebook.com' aria-label='Facebook' target='_blank'>f</a>
+<a class='s' href='https://instagram.com' aria-label='Instagram' target='_blank'>◎</a>
+<a class='s' href='https://youtube.com' aria-label='YouTube' target='_blank'>▶</a>
+</div></div></footer>
 <script>
-const data={
-user:{title:'Discover Deals Around You',desc:'Scan at partner stores, earn reward points, and redeem vouchers instantly.',why:'Why Users Love OffrO',cta1:'Download App',cta2:'How it Works',chips:['Scan at Stores','Earn Points','Redeem Vouchers','Deals Near You'],features:[['⌁','Scan & Earn Points'],['★','Redeem Real Vouchers'],['⌖','Deals Near You'],['✓','Trusted Partners']],cards:['Earn on Every Visit','Redeem Amazon Vouchers','Scan. Earn. Redeem.','Find Deals Near You']},
-merchant:{title:'Grow Your Business with OffrO',desc:'Manage stores, launch deals, and reward loyal customers from one dashboard.',why:'Why Merchants Choose OffrO',cta1:'Book Demo',cta2:'See Merchant Features',chips:['Multiple Stores','Subscription Plans','Create Deals','Reward Customers'],features:[['🏬','Manage Multiple Stores'],['📈','Drive Repeat Visits'],['🎯','Launch Unlimited Deals'],['👥','Customer Retention Tools']],cards:['Multi-Store Management','Flexible Subscription Plans','Campaign & Deal Builder','Rewards & Retention']}
+const M={
+user:{title:'Discover Deals Around You',desc:'Built with demo visuals only. No real customer or merchant data is shown.',cta1:'Download App',cta2:'View User Flow',why:'Why Users Love OffrO',chips:['Nearby Deals','Scan & Earn','Voucher Rewards','Profile & Wallet'],features:[['⌁','Scan QR and collect points quickly.'],['★','Redeem points for practical rewards.'],['⌖','Find verified stores near your location.'],['✓','Clean profile and policy access in-app.']],tabs:[['Login','Choose User tab, enter number, continue with OTP/social login.'],['Home','Browse category chips and featured local offers.'],['Store Detail','Open a store, view rating, offers, and scan action.'],['Profile','Manage wallet, scan history, favorites, and policy pages.']]},
+merchant:{title:'Grow Your Business with OffrO',desc:'Demo screens represent sample merchant workflows with placeholder data only.',cta1:'Book Demo',cta2:'View Merchant Flow',why:'Why Merchants Choose OffrO',chips:['Store Management','Deals Control','Invoice & Activity','Merchant Profile'],features:[['🏬','Manage multiple stores from one account.'],['🎯','Create and control deals in minutes.'],['📈','Drive repeat visits with reward scanning.'],['🛡','Access profile, KYC, and policy tools.']],tabs:[['Merchant Login','Switch to Merchant tab and sign in with registered phone.'],['My Stores','Edit store, manage QR, active status, and deal visibility.'],['My Deals','Create, update, and remove campaign offers quickly.'],['Reports/Activity','Track engagement, scans, and retention performance.']]}
 };
 let mode='user';
-function render(){const d=data[mode];heroTitle.textContent=d.title;heroDesc.textContent=d.desc;whyTitle.textContent=d.why;primaryCta.textContent=d.cta1;secondaryCta.textContent=d.cta2;
-chipWrap.innerHTML=d.chips.map(c=>`<div class='chip'>${c}</div>`).join('');
-featureList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3 style='margin:.1rem 0'>${t}</h3><p style='margin:0'>${mode==='user'?'Instant and simple experience for daily usage.':'Designed for measurable business growth.'}</p></div></div>`).join('');
-cards.innerHTML=d.cards.map(c=>`<article class='box'><h3>${c}</h3><p>${mode==='user'?'Built to keep rewards fun and easy for users.':'Built to simplify operations and grow revenue.'}</p></article>`).join('');
-screen.innerHTML=`<div class='status'><span>OffrO</span><span>${mode==='user'?'Home':'Dashboard'}</span></div><div class='banner'><strong>${mode==='user'?'Scan at Stores. Earn Points.':'Welcome Merchant!'}</strong><p style='margin:.35rem 0 0;color:#d8f1e6'>${mode==='user'?'Every scan = more rewards':'Manage stores, deals & subscriptions.'}</p></div><div class='cards'><div class='card'>${mode==='user'?'My Points\n2,450':'My Stores\n04'}</div><div class='card'>${mode==='user'?'Nearby Offers\n12':'Active Deals\n12'}</div><div class='card'>${mode==='user'?'Scan History':'Subscriptions'}</div><div class='card'>${mode==='user'?'Redeem Now':'Customers'}</div></div>`;
+function render(){const d=M[mode];heroTitle.textContent=d.title;heroDesc.textContent=d.desc;whyTitle.textContent=d.why;primaryCta.textContent=d.cta1;secondaryCta.textContent=d.cta2;
+chips.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
+featuresList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
+flowCards.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
+screen.innerHTML=`<div class='status'><span>OffrO</span><span>${mode==='user'?'Home':'Merchant'}</span></div><div class='banner'><strong>${mode==='user'?'Scan. Save. Earn.':'Manage. Promote. Grow.'}</strong><p style='margin:.35rem 0 0;color:#d8f1e6'>${mode==='user'?'Discover offers and redeem rewards.':'Control stores and deals from one place.'}</p></div><div class='cards'><div class='card'>${mode==='user'?'My Points\n2,450':'My Stores\n04'}</div><div class='card'>${mode==='user'?'Offers\n12':'Active Deals\n12'}</div><div class='card'>${mode==='user'?'Scan History':'Invoices'}</div><div class='card'>${mode==='user'?'My Wallet':'Activity'}</div></div>`;
 userBtn.classList.toggle('active',mode==='user');merchantBtn.classList.toggle('active',mode==='merchant');}
 userBtn.onclick=()=>{mode='user';render()};merchantBtn.onclick=()=>{mode='merchant';render()};render();
-</script>
-</body></html>
+</script></body></html>
