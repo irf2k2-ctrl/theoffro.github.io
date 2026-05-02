@@ -127,13 +127,26 @@
       merchant: ['https://theoffro.com/merchant-app.png','/merchant-app.png','./merchant-app.png']
     };
 
+    
+    const heroTitleEl=document.getElementById('heroTitle');
+    const heroDescEl=document.getElementById('heroDesc');
+    const whyTitleEl=document.getElementById('whyTitle');
+    const primaryCtaEl=document.getElementById('primaryCta');
+    const secondaryCtaEl=document.getElementById('secondaryCta');
+    const chipsEl=document.getElementById('chips');
+    const featuresListEl=document.getElementById('featuresList');
+    const flowCardsEl=document.getElementById('flowCards');
+    const screenEl=document.getElementById('screen');
+    const userBtnEl=document.getElementById('userBtn');
+    const merchantBtnEl=document.getElementById('merchantBtn');
+
     let mode='user';
     function loadPhoneImage(list){
       const el = document.getElementById('phoneImage');
       let i = 0;
       const tryNext = () => {
         if(i>=list.length){
-          screen.innerHTML='<div style="padding:20px;text-align:center;color:#3E5F55"><h3>Image not loading</h3><p>Checked: '+list.join('<br>')+'</p></div>';
+          screenEl.innerHTML='<div style="padding:20px;text-align:center;color:#3E5F55"><h3>Image not loading</h3><p>Checked: '+list.join('<br>')+'</p></div>';
           return;
         }
         const src=list[i] + (list[i].includes('?') ? '&v=6' : '?v=6');
@@ -146,18 +159,18 @@
 
     function render(){
       const d=M[mode];
-      heroTitle.textContent=d.title; heroDesc.textContent=d.desc; whyTitle.textContent=d.why;
-      primaryCta.textContent=d.cta1; secondaryCta.textContent=d.cta2;
-      chips.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
-      featuresList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
-      flowCards.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
+      heroTitleEl.textContent=d.title; heroDescEl.textContent=d.desc; whyTitleEl.textContent=d.why;
+      primaryCtaEl.textContent=d.cta1; secondaryCtaEl.textContent=d.cta2;
+      chipsEl.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
+      featuresListEl.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
+      flowCardsEl.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
       loadPhoneImage(IMG[mode]);
-      userBtn.classList.toggle('active',mode==='user');
-      merchantBtn.classList.toggle('active',mode==='merchant');
+      userBtnEl.classList.toggle('active',mode==='user');
+      merchantBtnEl.classList.toggle('active',mode==='merchant');
     }
 
-    userBtn.onclick=()=>{mode='user';render();};
-    merchantBtn.onclick=()=>{mode='merchant';render();};
+    userBtnEl.onclick=()=>{mode='user';render();};
+    merchantBtnEl.onclick=()=>{mode='merchant';render();};
     render();
   </script>
 </body>
