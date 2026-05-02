@@ -7,52 +7,56 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #F0F8F6;
+      font-family: 'Arial', sans-serif;
+      background-color: #F4F7F6;
       color: #3E5F55;
     }
 
     header {
-      padding: 40px 0;
-      background-color: #D4E9D4;
+      background-color: #4C9B77;
+      padding: 60px 0;
       text-align: center;
     }
 
     .logo {
-      width: 150px;
+      width: 160px;
       margin-bottom: 20px;
     }
 
     .headline {
-      font-size: 36px;
+      font-size: 40px;
       font-weight: bold;
-      margin: 10px 0;
+      color: white;
     }
 
     .description {
       font-size: 18px;
-      margin-bottom: 30px;
+      margin-top: 15px;
+      color: #E5E5E5;
     }
 
     .cta-btn {
-      background-color: #4C9B77;
+      background-color: #3A7D5F;
       color: white;
-      font-size: 18px;
-      padding: 12px 20px;
+      font-size: 20px;
+      padding: 14px 25px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s ease;
     }
 
     .cta-btn:hover {
-      background-color: #3A7D5F;
+      background-color: #2A6A47;
     }
 
     .section {
-      margin: 50px 0;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      padding: 60px 10%;
       text-align: center;
+      margin-top: 50px;
     }
 
     .section div {
@@ -60,23 +64,43 @@
     }
 
     .section img {
-      width: 100px;
-      margin-bottom: 10px;
+      width: 80px;
+      margin-bottom: 15px;
     }
 
     .footer {
       background-color: #2F5A4D;
       color: white;
+      padding: 50px 20px;
       text-align: center;
-      padding: 30px 0;
-    }
-
-    .footer img {
-      width: 60px;
     }
 
     .footer p {
       margin-top: 20px;
+    }
+
+    .footer .social-icons img {
+      width: 35px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+
+    .footer .cta-btn {
+      background-color: #E6B200;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .footer .cta-btn:hover {
+      background-color: #F2A800;
     }
   </style>
 </head>
@@ -111,11 +135,12 @@
     <div>Why Choose Offro?</div>
     <p>No complicated cashback. Just real rewards. Multiple Stores.</p>
     <p>Built for Merchants: Simplify, Save, and Scale your business with Offro.</p>
-    <div>
+    <div class="social-icons">
       <img src="green_bold.png" alt="App Store">
       <img src="new_logo_offro.png" alt="Google Play">
     </div>
     <p>Follow Us: Social Media Links</p>
+    <button class="cta-btn">Download the App</button>
   </section>
 
 </body>
