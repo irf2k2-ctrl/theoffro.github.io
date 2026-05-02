@@ -3,7 +3,7 @@
 :root{--bg:#FDFBF6;--mint:#CDEBD6;--sage:#A9CDBA;--sand:#E7D7C8;--deep:#3E5F55;--brand:#0c7a4f;--txt:#1b3a32}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--txt);background:#fff}.container{width:min(1180px,92%);margin:auto}
 .top{position:sticky;top:0;background:rgba(253,251,246,.96);border-bottom:1px solid #e8efec;z-index:10}.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
-.btn{border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.btn-primary{background:var(--deep);color:#fff}.btn-soft{background:#fff;color:var(--deep);border:2px solid var(--deep)}
+.btn{border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.btn-primary{background:var(--deep);color:#fff}.btn-soft{background:#fff;color:var(--deep)!important;border:2px solid var(--deep);font-weight:800}
 .hero{padding:72px 0;background:linear-gradient(172deg,#fff,var(--bg) 40%,var(--mint) 100%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr 1fr;gap:26px;align-items:center}
 .logo{width:min(300px,95%)}h1{font-size:clamp(2rem,4vw,3.6rem);margin:.3rem 0 .9rem}h2{font-size:clamp(1.5rem,3vw,2.2rem)}h3{margin:.2rem 0}p{margin:.2rem 0;color:#4e665f;line-height:1.5}
 .switcher{margin:14px 0 10px;background:#fff;border:1px solid #d6e4de;border-radius:20px;padding:8px}.switch-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -20,22 +20,18 @@ footer{margin-top:56px;background:var(--deep);color:#fff;padding:26px 0}.foot{di
 @media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid4{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}.actions{flex-direction:column}}
 </style></head><body>
 <header class='top'><div class='container nav'>
-<svg class='logo' viewBox='0 0 820 230' aria-label='OffrO official logo'>
-<defs><linearGradient id='lg' x1='0' x2='1'><stop offset='0' stop-color='#53c962'/><stop offset='1' stop-color='#006b47'/></linearGradient></defs>
-<g transform='translate(16,16)'><circle cx='95' cy='108' r='72' fill='none' stroke='url(#lg)' stroke-width='24'/><rect x='20' y='44' width='150' height='30' rx='15' fill='#62d15f'/><path d='M55 64 Q65 16 95 16 Q125 16 135 64' fill='none' stroke='#006b47' stroke-width='14' stroke-linecap='round'/></g>
-<text x='205' y='158' font-family='Inter,Segoe UI,Arial' font-size='142' font-weight='800' fill='#006b47'>ffrO</text>
-</svg>
+<img class='logo' src='./offro-logo.png' alt='OffrO logo' onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/><div id='logoFallback' style='display:none;font-size:2rem;font-weight:900;color:#006b47'>OffrO</div>
 <a class='btn btn-primary' href='https://google.com' target='_blank' rel='noopener'>Get Started</a>
 </div></header>
 <section class='hero'><div class='container hero-grid'>
-<div><p style='font-weight:700;color:var(--brand)'>One platform. Two complete journeys.</p><h1 id='heroTitle'>Discover Deals Around You</h1><p id='heroDesc'>Built with demo visuals only. No real customer or merchant data is shown.</p>
+<div><p style='font-weight:700;color:var(--brand)'>One platform. Two complete journeys.</p><h1 id='heroTitle'>Discover Deals Around You</h1><p id='heroDesc'>Scan at partner stores, earn points, and redeem rewards instantly.</p>
 <div class='switcher'><div class='switch-grid'><button id='userBtn' class='tab active'>👤 User Theme<small>Discover • Scan • Redeem</small></button><button id='merchantBtn' class='tab'>🏬 Merchant Theme<small>Manage • Promote • Retain</small></button></div></div>
 <div class='actions'><a id='primaryCta' class='btn btn-primary' href='https://google.com' target='_blank' rel='noopener'>Download App</a><a id='secondaryCta' class='btn btn-soft' href='#flow'>View User Flow</a></div><div id='chips' class='chips'></div></div>
 <div class='phone-wrap'><div class='glow'></div><div class='phone'><div id='screen' class='screen'></div></div></div>
 <aside class='features'><h2 id='whyTitle'>Why Users Love OffrO</h2><div id='featuresList'></div></aside>
 </div></section>
 <section id='flow' class='sec'><div class='container'><h2 style='text-align:center'>Flow Tabs with Proper Descriptions</h2><div id='flowCards' class='grid4'></div></div></section>
-<section class='container'><div class='cta'><div><h2 style='margin:0'>More Stores. More Deals. More Rewards.</h2><p style='color:#ddf4ea'>All visuals are prepared for presentation/demo use only.</p></div><a class='btn btn-soft' style='border-color:#fff;color:#fff' href='mailto:hello@offro.app'>Contact Sales</a></div></section>
+<section class='container'><div class='cta'><div><h2 style='margin:0'>More Stores. More Deals. More Rewards.</h2><p style='color:#ddf4ea'>Built for merchants. Loved by customers.</p></div><a class='btn btn-soft' style='border-color:#fff;color:#fff' href='mailto:hello@offro.app'>Contact Sales</a></div></section>
 <footer><div class='container foot'><div>© OffrO • Discover • Save • Earn</div><div class='social'>
 <a class='s' href='https://facebook.com' aria-label='Facebook' target='_blank'>f</a>
 <a class='s' href='https://instagram.com' aria-label='Instagram' target='_blank'>◎</a>
@@ -43,15 +39,16 @@ footer{margin-top:56px;background:var(--deep);color:#fff;padding:26px 0}.foot{di
 </div></div></footer>
 <script>
 const M={
-user:{title:'Discover Deals Around You',desc:'Built with demo visuals only. No real customer or merchant data is shown.',cta1:'Download App',cta2:'View User Flow',why:'Why Users Love OffrO',chips:['Nearby Deals','Scan & Earn','Voucher Rewards','Profile & Wallet'],features:[['⌁','Scan QR and collect points quickly.'],['★','Redeem points for practical rewards.'],['⌖','Find verified stores near your location.'],['✓','Clean profile and policy access in-app.']],tabs:[['Login','Choose User tab, enter number, continue with OTP/social login.'],['Home','Browse category chips and featured local offers.'],['Store Detail','Open a store, view rating, offers, and scan action.'],['Profile','Manage wallet, scan history, favorites, and policy pages.']]},
-merchant:{title:'Grow Your Business with OffrO',desc:'Demo screens represent sample merchant workflows with placeholder data only.',cta1:'Book Demo',cta2:'View Merchant Flow',why:'Why Merchants Choose OffrO',chips:['Store Management','Deals Control','Invoice & Activity','Merchant Profile'],features:[['🏬','Manage multiple stores from one account.'],['🎯','Create and control deals in minutes.'],['📈','Drive repeat visits with reward scanning.'],['🛡','Access profile, KYC, and policy tools.']],tabs:[['Merchant Login','Switch to Merchant tab and sign in with registered phone.'],['My Stores','Edit store, manage QR, active status, and deal visibility.'],['My Deals','Create, update, and remove campaign offers quickly.'],['Reports/Activity','Track engagement, scans, and retention performance.']]}
+user:{title:'Discover Deals Around You',desc:'Scan at partner stores, earn points, and redeem rewards instantly.',cta1:'Download App',cta2:'View User Flow',why:'Why Users Love OffrO',chips:['Nearby Deals','Scan & Earn','Voucher Rewards','Profile & Wallet'],features:[['⌁','Scan QR and collect points quickly.'],['★','Redeem points for practical rewards.'],['⌖','Find verified stores near your location.'],['✓','Clean profile and policy access in-app.']],tabs:[['Login','Choose User tab, enter number, continue with OTP/social login.'],['Home','Browse category chips and featured local offers.'],['Store Detail','Open a store, view rating, offers, and scan action.'],['Profile','Manage wallet, scan history, favorites, and policy pages.']]},
+merchant:{title:'Grow Your Business with OffrO',desc:'Manage stores, create deals, and grow repeat visits from one dashboard.',cta1:'Book Demo',cta2:'View Merchant Flow',why:'Why Merchants Choose OffrO',chips:['Store Management','Deals Control','Invoice & Activity','Merchant Profile'],features:[['🏬','Manage multiple stores from one account.'],['🎯','Create and control deals in minutes.'],['📈','Drive repeat visits with reward scanning.'],['🛡','Access profile, KYC, and policy tools.']],tabs:[['Merchant Login','Switch to Merchant tab and sign in with registered phone.'],['My Stores','Edit store, manage QR, active status, and deal visibility.'],['My Deals','Create, update, and remove campaign offers quickly.'],['Reports/Activity','Track engagement, scans, and retention performance.']]}
 };
 let mode='user';
 function render(){const d=M[mode];heroTitle.textContent=d.title;heroDesc.textContent=d.desc;whyTitle.textContent=d.why;primaryCta.textContent=d.cta1;secondaryCta.textContent=d.cta2;
 chips.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
 featuresList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
 flowCards.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
-screen.innerHTML=`<div class='status'><span>OffrO</span><span>${mode==='user'?'Home':'Merchant'}</span></div><div class='banner'><strong>${mode==='user'?'Scan. Save. Earn.':'Manage. Promote. Grow.'}</strong><p style='margin:.35rem 0 0;color:#d8f1e6'>${mode==='user'?'Discover offers and redeem rewards.':'Control stores and deals from one place.'}</p></div><div class='cards'><div class='card'>${mode==='user'?'My Points\n2,450':'My Stores\n04'}</div><div class='card'>${mode==='user'?'Offers\n12':'Active Deals\n12'}</div><div class='card'>${mode==='user'?'Scan History':'Invoices'}</div><div class='card'>${mode==='user'?'My Wallet':'Activity'}</div></div>`;
+const img = mode==='user' ? './user-app.png' : './merchant-app.png';
+screen.innerHTML=`<img src='${img}' alt='${mode} app screen' style='width:100%;height:100%;object-fit:cover;display:block' onerror="this.outerHTML='<div style=\"padding:22px;text-align:center;color:#3E5F55\"><h3>Upload ${mode==='user'?'user-app.png':'merchant-app.png'}</h3><p>Place real app screenshot in same folder.</p></div>'"/>`;
 userBtn.classList.toggle('active',mode==='user');merchantBtn.classList.toggle('active',mode==='merchant');}
 userBtn.onclick=()=>{mode='user';render()};merchantBtn.onclick=()=>{mode='merchant';render()};render();
 </script></body></html>
