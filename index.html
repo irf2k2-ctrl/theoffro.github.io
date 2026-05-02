@@ -49,7 +49,7 @@
 <body>
   <header class="top">
     <div class="container nav">
-      <img class="logo" src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/output-onlinepngtools.png?raw=true" alt="OffrO logo" onerror="this.src='/new%20logo%20offro.png'" />
+      <img class="logo" src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/output-onlinepngtools.png?raw=true" alt="OffrO logo" />
       <a class="btn btn-primary" href="https://google.com" target="_blank" rel="noopener">Get Started</a>
     </div>
   </header>
@@ -78,7 +78,7 @@
 
       <div class="phone-wrap">
         <div class="glow"></div>
-        <div class="phone"><div id="screen" class="screen"></div></div>
+        <div class="phone"><div id="screen" class="screen"><img id="phoneImage" alt="OffrO app screen" style="width:100%;height:100%;object-fit:cover;display:block"/></div></div>
       </div>
 
       <aside class="features">
@@ -129,24 +129,17 @@
 
     let mode='user';
     function loadPhoneImage(list){
-      let i=0;
-      const tryNext=()=>{
+      const el = document.getElementById('phoneImage');
+      let i = 0;
+      const tryNext = () => {
         if(i>=list.length){
-          screen.style.backgroundImage='none';
           screen.innerHTML='<div style="padding:20px;text-align:center;color:#3E5F55"><h3>Image not loading</h3><p>Checked: '+list.join('<br>')+'</p></div>';
           return;
         }
-        const probe=new Image();
-        const src=list[i];
-        probe.onload=()=>{
-          screen.innerHTML='';
-          screen.style.backgroundImage=`url('${src}')`;
-          screen.style.backgroundSize='cover';
-          screen.style.backgroundPosition='center';
-          screen.style.backgroundRepeat='no-repeat';
-        };
-        probe.onerror=()=>{i++;tryNext();};
-        probe.src=src;
+        const src=list[i] + (list[i].includes('?') ? '&v=6' : '?v=6');
+        el.onload=()=>{el.style.display='block';};
+        el.onerror=()=>{i++;tryNext();};
+        el.src=src;
       };
       tryNext();
     }
