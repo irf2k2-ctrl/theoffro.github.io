@@ -7,141 +7,122 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #F4F7F6;
+      font-family: Arial, sans-serif;
+      background-color: #CDEBD6;
       color: #3E5F55;
     }
-
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
     header {
-      background-color: #4C9B77;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .logo {
-      width: 160px;
-      margin-bottom: 20px;
-    }
-
-    .headline {
-      font-size: 40px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .description {
-      font-size: 18px;
-      margin-top: 15px;
-      color: #E5E5E5;
-    }
-
-    .cta-btn {
-      background-color: #3A7D5F;
-      color: white;
-      font-size: 20px;
-      padding: 14px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: 0.3s ease;
-    }
-
-    .cta-btn:hover {
-      background-color: #2A6A47;
-    }
-
-    .section {
+      padding: 40px 0;
       display: flex;
       justify-content: space-between;
-      padding: 60px 10%;
-      text-align: center;
-      margin-top: 50px;
+      align-items: center;
+      background-color: #E7D7C8;
+      border-bottom: 5px solid #A9CDBA;
     }
-
-    .section div {
-      width: 30%;
+    .logo img {
+      height: 60px;
     }
-
-    .section img {
-      width: 80px;
-      margin-bottom: 15px;
+    h1 {
+      font-size: 2.5em;
+      margin-top: 0;
+      color: #3E5F55;
     }
-
-    .footer {
-      background-color: #2F5A4D;
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .footer p {
-      margin-top: 20px;
-    }
-
-    .footer .social-icons img {
-      width: 35px;
-      margin: 10px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .footer .social-icons img:hover {
-      opacity: 0.7;
-    }
-
-    .footer .cta-btn {
-      background-color: #E6B200;
-      font-size: 16px;
-      padding: 12px 20px;
+    .cta-button {
+      background-color: #3E5F55;
+      color: #fff;
+      font-size: 1.2em;
+      padding: 15px 40px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
+      text-transform: uppercase;
     }
-
-    .footer .cta-btn:hover {
-      background-color: #F2A800;
+    .cta-button:hover {
+      background-color: #A9CDBA;
+    }
+    .section {
+      padding: 40px 0;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+    .icons img {
+      height: 60px;
+      width: 60px;
+    }
+    footer {
+      padding: 20px 0;
+      background-color: #3E5F55;
+      text-align: center;
+      color: #fff;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/green%20bold.png?raw=true" alt="Offro Logo" class="logo">
-    <div class="headline">Scan. Earn. Redeem.</div>
-    <div class="description">Earn rewards at your favorite stores and convert points into real vouchers.</div>
-    <button class="cta-btn">Get Started</button>
+    <div class="logo">
+      <img src="new_logo_offro.png" alt="Offro Logo">
+    </div>
+    <div>
+      <button class="cta-button">Get Started</button>
+    </div>
   </header>
 
-  <section class="section">
-    <div>
-      <img src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/green%20bold.png?raw=true" alt="Scan Icon">
-      <div><strong>Scan</strong></div>
-      <p>Scan QR code at partner stores to earn points instantly.</p>
-    </div>
-    <div>
-      <img src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/Social%20meida1%20app%20info.jpeg?raw=true" alt="Earn Icon">
-      <div><strong>Earn</strong></div>
-      <p>Get points directly in your wallet.</p>
-    </div>
-    <div>
-      <img src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/Social%20Media%20Merchant.png?raw=true" alt="Redeem Icon">
-      <div><strong>Redeem</strong></div>
-      <p>Convert your points into shopping vouchers like Amazon.</p>
-    </div>
-  </section>
+  <div class="container">
+    <section class="section">
+      <h1>Scan. Earn. Redeem.</h1>
+      <p>Earn rewards at your favorite stores and convert points into real vouchers.</p>
+    </section>
 
-  <section class="footer">
-    <div>Why Choose Offro?</div>
-    <p>No complicated cashback. Just real rewards. Multiple Stores.</p>
+    <section class="section">
+      <h2>How Offro Works</h2>
+      <div class="icons">
+        <div>
+          <img src="Scan Icon" alt="Scan">
+          <p>Scan</p>
+        </div>
+        <div>
+          <img src="Earn Icon" alt="Earn">
+          <p>Earn</p>
+        </div>
+        <div>
+          <img src="Redeem Icon" alt="Redeem">
+          <p>Redeem</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why Choose Offro?</h2>
+      <p>No complicated cashback. Just real rewards. Multiple stores.</p>
+    </section>
+  </div>
+
+  <footer>
     <p>Built for Merchants: Simplify, Save, and Scale your business with Offro.</p>
-    <div class="social-icons">
-      <img src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/green%20bold.png?raw=true" alt="App Store">
-      <img src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/green%20bold.png?raw=true" alt="Google Play">
-    </div>
-    <p>Follow Us: Social Media Links</p>
-    <button class="cta-btn">Download the App</button>
-  </section>
+    <p>Follow Us: <a href="#">Social Media Links</a></p>
+  </footer>
 
 </body>
 </html>
