@@ -47,7 +47,7 @@ function render(){const d=M[mode];heroTitle.textContent=d.title;heroDesc.textCon
 chips.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
 featuresList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
 flowCards.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
-const img = mode==='user' ? 'https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/user-app.png?raw=true' : './merchant-app.png';
+const img = mode==='user' ? 'https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/user-app.png?raw=true' : 'https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/merchant-app.png?raw=true';
 screen.innerHTML=`<img src='${img}' alt='${mode} app screen' style='width:100%;height:100%;object-fit:cover;display:block' onerror="this.outerHTML='<div style=\"padding:22px;text-align:center;color:#3E5F55\"><h3>Upload ${mode==='user'?'user-app.png':'merchant-app.png'}</h3><p>Place real app screenshot in same folder.</p></div>'"/>`;
 userBtn.classList.toggle('active',mode==='user');merchantBtn.classList.toggle('active',mode==='merchant');}
 userBtn.onclick=()=>{mode='user';render()};merchantBtn.onclick=()=>{mode='merchant';render()};render();
