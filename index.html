@@ -20,7 +20,7 @@ footer{margin-top:56px;background:var(--deep);color:#fff;padding:26px 0}.foot{di
 @media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid4{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}.actions{flex-direction:column}}
 </style></head><body>
 <header class='top'><div class='container nav'>
-<img class='logo' src='./offro-logo.png' alt='OffrO logo' onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/><div id='logoFallback' style='display:none;font-size:2rem;font-weight:900;color:#006b47'>OffrO</div>
+<img class='logo' src='https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/output-onlinepngtools.png?raw=true' alt='OffrO logo' onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/><div id='logoFallback' style='display:none;font-size:2rem;font-weight:900;color:#006b47'>OffrO</div>
 <a class='btn btn-primary' href='https://google.com' target='_blank' rel='noopener'>Get Started</a>
 </div></header>
 <section class='hero'><div class='container hero-grid'>
@@ -47,7 +47,7 @@ function render(){const d=M[mode];heroTitle.textContent=d.title;heroDesc.textCon
 chips.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
 featuresList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
 flowCards.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
-const img = mode==='user' ? '/user-app.png' : '/merchant-app.png';
+const img = mode==='user' ? 'https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/user-app.png?raw=true' : 'https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/merchant-app.png?raw=true';
 screen.innerHTML='';
 const phoneImg=document.createElement('img');
 phoneImg.src = img.includes('?') ? `${img}&v=4` : `${img}?v=4`; 
