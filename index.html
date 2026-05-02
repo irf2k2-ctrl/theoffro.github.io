@@ -5,7 +5,7 @@
 .top{position:sticky;top:0;background:rgba(253,251,246,.96);border-bottom:1px solid #e8efec;z-index:10}.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
 .btn{border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.btn-primary{background:var(--deep);color:#fff}.btn-soft{background:#fff;color:var(--deep)!important;border:2px solid var(--deep);font-weight:800}
 .hero{padding:72px 0;background:linear-gradient(172deg,#fff,var(--bg) 40%,var(--mint) 100%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr 1fr;gap:26px;align-items:center}
-.logo{width:min(200px,95%)}h1{font-size:clamp(2rem,4vw,3.6rem);margin:.3rem 0 .9rem}h2{font-size:clamp(1.5rem,3vw,2.2rem)}h3{margin:.2rem 0}p{margin:.2rem 0;color:#4e665f;line-height:1.5}
+.logo{width:min(300px,95%)}h1{font-size:clamp(2rem,4vw,3.6rem);margin:.3rem 0 .9rem}h2{font-size:clamp(1.5rem,3vw,2.2rem)}h3{margin:.2rem 0}p{margin:.2rem 0;color:#4e665f;line-height:1.5}
 .switcher{margin:14px 0 10px;background:#fff;border:1px solid #d6e4de;border-radius:20px;padding:8px}.switch-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .tab{border:0;border-radius:14px;padding:14px 12px;cursor:pointer;font-weight:800;font-size:1.1rem;display:grid;gap:4px;text-align:left;background:#edf5f2;color:#46655b}
 .tab small{font-size:.84rem;font-weight:600;opacity:.9}.tab.active{background:var(--deep);color:#fff;box-shadow:0 8px 26px rgba(62,95,85,.35);transform:scale(1.02)}
@@ -20,7 +20,7 @@ footer{margin-top:56px;background:var(--deep);color:#fff;padding:26px 0}.foot{di
 @media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid4{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}.actions{flex-direction:column}}
 </style></head><body>
 <header class='top'><div class='container nav'>
-<img class='logo' src='https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/output-onlinepngtools.png?raw=true' alt='OffrO logo' onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/><div id='logoFallback' style='display:none;font-size:2rem;font-weight:900;color:#006b47'>OffrO</div>
+<img class='logo' src='./offro-logo.png' alt='OffrO logo' onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/><div id='logoFallback' style='display:none;font-size:2rem;font-weight:900;color:#006b47'>OffrO</div>
 <a class='btn btn-primary' href='https://google.com' target='_blank' rel='noopener'>Get Started</a>
 </div></header>
 <section class='hero'><div class='container hero-grid'>
@@ -48,7 +48,13 @@ chips.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
 featuresList.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
 flowCards.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
 const img = mode==='user' ? '/user-app.png' : '/merchant-app.png';
-screen.innerHTML=`<img src='${img}' alt='${mode} app screen' style='width:100%;height:100%;object-fit:cover;display:block' onerror="this.outerHTML='<div style=\"padding:22px;text-align:center;color:#3E5F55\"><h3>Upload ${mode==='user'?'user-app.png':'merchant-app.png'}</h3><p>Place real app screenshot in same folder.</p></div>'"/>`;
+screen.innerHTML='';
+const phoneImg=document.createElement('img');
+phoneImg.src=`${img}?v=4`;
+phoneImg.alt=`${mode} app screen`;
+phoneImg.style.cssText='width:100%;height:100%;object-fit:cover;display:block;background:#fff';
+phoneImg.onerror=()=>{screen.innerHTML='<div style="padding:22px;text-align:center;color:#3E5F55"><h3>Image failed to load</h3><p>Path checked: '+img+'</p></div>';};
+screen.appendChild(phoneImg);
 userBtn.classList.toggle('active',mode==='user');merchantBtn.classList.toggle('active',mode==='merchant');}
 userBtn.onclick=()=>{mode='user';render()};merchantBtn.onclick=()=>{mode='merchant';render()};render();
 </script></body></html>
