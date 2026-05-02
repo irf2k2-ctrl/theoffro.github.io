@@ -1,128 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offro - Scan. Earn. Redeem.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OffrO — More Stores. More Deals. More Rewards.</title>
   <style>
+    :root {
+      --mint: #CDEBD6;
+      --white: #FDFBF6;
+      --sage: #A9CDBA;
+      --sand: #E7D7C8;
+      --deep: #3E5F55;
+      --brand: #0b7a4f;
+      --text: #19362e;
+      --shadow: 0 10px 30px rgba(62, 95, 85, 0.14);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #CDEBD6;
-      color: #3E5F55;
+      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
     }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-    header {
-      padding: 40px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #E7D7C8;
-      border-bottom: 5px solid #A9CDBA;
-    }
-    .logo img {
-      height: 60px;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-top: 0;
-      color: #3E5F55;
-    }
-    .cta-button {
-      background-color: #3E5F55;
-      color: #fff;
-      font-size: 1.2em;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
-    .cta-button:hover {
-      background-color: #A9CDBA;
-    }
-    .section {
-      padding: 40px 0;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-    .icons {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 30px;
-    }
-    .icons img {
-      height: 60px;
-      width: 60px;
-    }
-    footer {
-      padding: 20px 0;
-      background-color: #3E5F55;
-      text-align: center;
-      color: #fff;
-    }
-    footer a {
-      color: #fff;
+
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+    .section { padding: 74px 0; }
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 14px; }
+    h1 { font-size: clamp(2.1rem, 5vw, 3.7rem); }
+    h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); }
+    p { margin: 0 0 14px; }
+
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
       text-decoration: none;
-      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: .25s ease;
+      display: inline-block;
     }
-    footer a:hover {
-      text-decoration: underline;
+    .btn-primary { background: var(--deep); color: #fff; }
+    .btn-primary:hover { background: #2d4740; }
+    .btn-ghost { border: 2px solid var(--deep); color: var(--deep); }
+    .btn-ghost:hover { background: var(--mint); }
+
+    .hero {
+      background: linear-gradient(170deg, #fff 0%, var(--white) 50%, var(--mint) 100%);
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 34px;
+    }
+    .logo {
+      width: 168px;
+      margin-bottom: 16px;
+    }
+    .highlight { color: var(--brand); }
+    .chip-row {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      gap: 12px;
+    }
+    .chip {
+      background: #fff;
+      border: 1px solid #e7ebe8;
+      border-radius: 14px;
+      padding: 12px 10px;
+      text-align: center;
+      font-size: .92rem;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    .phone {
+      width: 100%;
+      max-width: 440px;
+      margin-inline: auto;
+      border-radius: 32px;
+      border: 10px solid #111;
+      box-shadow: var(--shadow);
+      display: block;
+    }
+
+    .why { background: #fff; }
+    .why-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      margin-top: 20px;
+    }
+    .card {
+      border: 1px solid #e3ebe6;
+      border-radius: var(--radius);
+      padding: 22px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { color: var(--deep); font-size: 1.22rem; }
+
+    .band {
+      background: linear-gradient(120deg, var(--deep), #0e7b51);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer {
+      background: var(--white);
+      border-top: 1px solid #e6e0d7;
+      padding: 30px 0;
+      color: #4e5f58;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .chip-row { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+      .why-grid { grid-template-columns: 1fr; }
+      .band { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="logo">
-      <img src="new_logo_offro.png" alt="Offro Logo">
-    </div>
-    <div>
-      <button class="cta-button">Get Started</button>
+  <header class="hero section">
+    <div class="container hero-grid">
+      <div>
+        <img class="logo" src="./assets/offro-logo.png" alt="OffrO logo" />
+        <h1>Grow Your Business with <span class="highlight">OffrO</span></h1>
+        <p>Everything you need to run, promote, and reward — built for merchants and loved by customers.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#contact">Request Demo</a>
+          <a class="btn btn-ghost" href="#features">Explore Features</a>
+        </div>
+        <div class="chip-row">
+          <div class="chip">Multiple Stores</div>
+          <div class="chip">Subscription Plans</div>
+          <div class="chip">Create Deals</div>
+          <div class="chip">Reward Customers</div>
+        </div>
+      </div>
+      <div>
+        <img class="phone" src="./assets/offro-app-screen.png" alt="OffrO mobile dashboard preview" />
+      </div>
     </div>
   </header>
 
-  <div class="container">
-    <section class="section">
-      <h1>Scan. Earn. Redeem.</h1>
-      <p>Earn rewards at your favorite stores and convert points into real vouchers.</p>
-    </section>
-
-    <section class="section">
-      <h2>How Offro Works</h2>
-      <div class="icons">
-        <div>
-          <img src="Scan Icon" alt="Scan">
-          <p>Scan</p>
-        </div>
-        <div>
-          <img src="Earn Icon" alt="Earn">
-          <p>Earn</p>
-        </div>
-        <div>
-          <img src="Redeem Icon" alt="Redeem">
-          <p>Redeem</p>
-        </div>
+  <section id="features" class="why section">
+    <div class="container">
+      <h2>Why merchants choose <span class="highlight">OffrO</span></h2>
+      <div class="why-grid">
+        <article class="card">
+          <h3>Manage Multiple Stores</h3>
+          <p>Create and manage all your store locations from one simple dashboard.</p>
+        </article>
+        <article class="card">
+          <h3>Flexible Subscription Plans</h3>
+          <p>Pick a plan that fits your stage, then scale as your business grows.</p>
+        </article>
+        <article class="card">
+          <h3>Create Unlimited Deals</h3>
+          <p>Launch offers in minutes and keep campaigns running all month long.</p>
+        </article>
+        <article class="card">
+          <h3>Reward & Retain Customers</h3>
+          <p>Encourage repeat visits with points, rewards, and voucher redemptions.</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Why Choose Offro?</h2>
-      <p>No complicated cashback. Just real rewards. Multiple stores.</p>
-    </section>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="band" id="contact">
+        <div>
+          <h2>One platform. All your stores. Unlimited growth.</h2>
+          <p>OffrO helps merchants simplify operations, increase reach, and keep customers coming back.</p>
+        </div>
+        <a class="btn btn-ghost" style="border-color:#fff;color:#fff" href="mailto:hello@offro.app">Contact Sales</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>Built for Merchants: Simplify, Save, and Scale your business with Offro.</p>
-    <p>Follow Us: <a href="#">Social Media Links</a></p>
+    <div class="container">
+      <strong>OffrO</strong> — More Stores. More Deals. More Rewards.
+    </div>
   </footer>
-
 </body>
 </html>
