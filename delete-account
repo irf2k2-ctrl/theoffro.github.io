@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account - OFFRO</title>
+<style>
+:root{--brand:#0c7a4f;--deep:#3E5F55;--bg:#f8fcfa;}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg)}
+header{background:linear-gradient(135deg,var(--deep),var(--brand));color:#fff;text-align:center;padding:55px 20px}
+.container{max-width:850px;margin:40px auto;padding:0 20px}
+.card{background:#fff;padding:40px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+label{display:block;margin-top:16px;font-weight:bold;color:#3E5F55}
+input,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+textarea{height:110px;resize:vertical}
+button{margin-top:24px;background:#0c7a4f;color:#fff;border:none;padding:14px 28px;border-radius:999px;font-size:16px;cursor:pointer}
+button:hover{background:#3E5F55}
+.footer{text-align:center;margin-top:35px;color:#777}
+</style>
+<script>
+function sendMail(e){
+e.preventDefault();
+const n=document.getElementById('name').value;
+const m=document.getElementById('mobile').value;
+const em=document.getElementById('email').value;
+const r=document.getElementById('reason').value;
+const body=`OFFRO Account Deletion Request
+
+Name: ${n}
+Registered Mobile: ${m}
+Email: ${em}
+
+Reason:
+${r}
+
+I request deletion of my OFFRO account and understand this action is permanent.`;
+window.location.href='mailto:support@theoffro.com?subject='+encodeURIComponent('OFFRO Account Deletion Request')+'&body='+encodeURIComponent(body);
+}
+</script>
+</head>
+<body>
+<header>
+<h1>Request Account Deletion</h1>
+<p>Complete the form below to create an email request.</p>
+</header>
+<div class="container">
+<div class="card">
+<form onsubmit="sendMail(event)">
+<label>Registered Mobile Number *</label>
+<input id="mobile" required>
+
+<label>Full Name *</label>
+<input id="name" required>
+
+<label>Email (Optional)</label>
+<input id="email" type="email">
+
+<label>Reason for Deletion (Optional)</label>
+<textarea id="reason"></textarea>
+
+<label style="font-weight:normal"><input type="checkbox" required> I understand my OFFRO account will be permanently deleted.</label>
+
+<button type="submit">Submit Request</button>
+</form>
+<div class="footer">Your email app will open with a pre-filled deletion request addressed to <strong>support@theoffro.com</strong>.<br>© 2026 OFFRO</div>
+</div>
+</div>
+</body>
+</html>
