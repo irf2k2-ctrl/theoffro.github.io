@@ -31,13 +31,7 @@
     .chips{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:10px;margin-top:12px}
     .chip{background:#fff;border:1px solid #dfeae4;border-radius:12px;padding:10px;text-align:center;font-weight:700}
 
-    .phone-wrap{
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
-width:100%;
-}.glow{position:absolute;width:86%;height:74%;border-radius:50%;background:radial-gradient(circle,var(--brand),var(--deep));opacity:.2;filter:blur(9px)}
+    .phone-wrap{position:relative;display:grid;place-items:center}.glow{position:absolute;width:86%;height:74%;border-radius:50%;background:radial-gradient(circle,var(--brand),var(--deep));opacity:.2;filter:blur(9px)}
     .phone{
 position:relative;
 width:min(430px,100%);
@@ -69,6 +63,9 @@ bottom:0;
 overflow:hidden;
 border-radius:28px;
 background:#000;
+display:flex;
+justify-content:center;
+align-items:flex-start;
 }
 
     .features .item{display:grid;grid-template-columns:50px 1fr;gap:12px;padding:11px 0;border-bottom:1px dashed #d4e4dc}
@@ -123,7 +120,7 @@ background:#000;
 
       <div class="phone-wrap">
         <div class="glow"></div>
-        <div class="phone"><div id="screen" class="screen"><img id="phoneImage" alt="Offro app screen" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"/></div></div>
+        <div class="phone"><div id="screen" class="screen"><img id="phoneImage" alt="Offro app screen" style="width:100%;height:100%;object-fit:contain;object-position:left top;display:block;background:#000"/></div></div>
       </div>
 
       <aside class="features">
