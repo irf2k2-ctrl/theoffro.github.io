@@ -83,6 +83,18 @@ align-items:flex-start;
     .footer-links a{color:#fff;text-decoration:none;font-weight:600;transition:.2s}
     .footer-links a:hover{color:#CDEBD6;text-decoration:underline}
 
+    /* App store chooser */
+    .store-modal{position:fixed;inset:0;background:rgba(27,58,50,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
+    .store-modal.open{display:flex}
+    .store-card{width:min(460px,100%);background:#fff;border-radius:22px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.25);position:relative;text-align:center}
+    .store-card h2{margin:0 0 8px;color:var(--text)}
+    .store-card p{margin:0 0 22px}
+    .store-options{display:grid;gap:12px}
+    .store-option{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:1rem}
+    .store-option.apple{background:#111;color:#fff}
+    .store-option.android{background:#0c7a4f;color:#fff}
+    .store-close{position:absolute;right:14px;top:12px;border:0;background:#edf4f1;color:var(--deep);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer}
+    .store-note{font-size:.82rem;color:#6b7d77;margin-top:14px}
 
     @media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){.grid4{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}.actions{flex-direction:column}}
@@ -116,7 +128,7 @@ align-items:flex-start;
   <header class="top">
     <div class="container nav">
       <img class="logo" src="https://github.com/irf2k2-ctrl/theoffro.github.io/blob/main/output-onlinepngtools.png?raw=true" alt="Offro logo" />
-      <a class="btn btn-primary" href="https://play.google.com/store" target="_blank" rel="noopener">Get Started</a>
+      <a class="btn btn-primary" href="#" data-store-link>Get Started</a>
     </div>
   </header>
 
@@ -136,7 +148,7 @@ align-items:flex-start;
         </div>
 
         <div class="actions">
-          <a id="primaryCta" class="btn btn-primary" href="https://google.com" target="_blank" rel="noopener">Download App</a>
+          <a id="primaryCta" class="btn btn-primary" href="#" data-store-link>Download App</a>
           <a id="secondaryCta" class="btn btn-soft" href="#flow">View User Flow</a>
         </div>
 
@@ -168,13 +180,13 @@ align-items:flex-start;
         <h2 style="margin:0;color:#fff">More Stores. More Deals. More Rewards.</h2>
         <p style="color:#dbf4e8">Built for merchants. Loved by customers.</p>
       </div>
-      <a class="btn btn-primary" style="background:#fff;color:#2a4d43" href="mailto:hello@offro.app">Get Started</a>
+      <a class="btn btn-primary" style="background:#fff;color:#2a4d43" href="#" data-store-link>Get Started</a>
     </div>
   </section>
 
 
   <section class="container" style="padding:28px 0 8px;text-align:center;">
-    <a class="btn btn-primary" href="https://google.com" target="_blank" rel="noopener" style="min-width:240px;">Get Started</a>
+    <a class="btn btn-primary" href="#" data-store-link style="min-width:240px;">Get Started</a>
   </section>
 
   <section class="sec" style="background:#f8fcfa;">
@@ -193,6 +205,19 @@ align-items:flex-start;
 <p>Offro is proudly developed and operated by <strong>MIB Tech Solutions</strong>.</p>
 </div>
 </section>
+  <div id="storeModal" class="store-modal" role="dialog" aria-modal="true" aria-labelledby="storeModalTitle">
+    <div class="store-card">
+      <button id="storeClose" class="store-close" type="button" aria-label="Close">×</button>
+      <h2 id="storeModalTitle">Download Offro</h2>
+      <p>Choose your app store to get the Offro app.</p>
+      <div class="store-options">
+        <a class="store-option apple" href="https://apps.apple.com/in/app/offro/id6798829235" target="_blank" rel="noopener">&nbsp; Download on the App Store</a>
+        <a class="store-option android" href="https://play.google.com/store/apps/details?id=com.offro.app" target="_blank" rel="noopener">▶&nbsp; Get it on Google Play</a>
+      </div>
+      <div class="store-note">On iPhone/iPad or Android, Offro will take you directly to the correct store.</div>
+    </div>
+  </div>
+
   <footer>
     <div class="container foot">
       <div>© 2026 Offro. All Rights Reserved.<br>Developed and operated by MIB Tech Solutions.</div>
@@ -214,6 +239,51 @@ align-items:flex-start;
   </footer>
 
   <script>
+    const STORE_LINKS = {
+      ios: 'https://apps.apple.com/in/app/offro/id6798829235',
+      android: 'https://play.google.com/store/apps/details?id=com.offro.app'
+    };
+
+    function isIOSDevice() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    }
+
+    function isAndroidDevice() {
+      return /Android/i.test(navigator.userAgent);
+    }
+
+    function openStoreChooser(event) {
+      if (event.currentTarget && event.currentTarget.getAttribute('href') === 'mailto:hello@offro.app') {
+        return;
+      }
+      event.preventDefault();
+      if (isIOSDevice()) {
+        window.open(STORE_LINKS.ios, '_blank', 'noopener');
+        return;
+      }
+      if (isAndroidDevice()) {
+        window.open(STORE_LINKS.android, '_blank', 'noopener');
+        return;
+      }
+      document.getElementById('storeModal').classList.add('open');
+    }
+
+    const storeModal = document.getElementById('storeModal');
+    const storeClose = document.getElementById('storeClose');
+
+    document.querySelectorAll('[data-store-link]').forEach(link => {
+      link.addEventListener('click', openStoreChooser);
+    });
+
+    storeClose.addEventListener('click', () => storeModal.classList.remove('open'));
+    storeModal.addEventListener('click', (event) => {
+      if (event.target === storeModal) storeModal.classList.remove('open');
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') storeModal.classList.remove('open');
+    });
+
     const M={
       user:{title:'Discover Deals Around You',desc:'Scan at partner stores, earn points, and redeem rewards instantly.',cta1:'Download App',cta2:'View User Flow',why:'Why Users Love Offro',chips:['Nearby Deals','Scan & Earn','Voucher Rewards','Profile & Wallet'],features:[['⌁','Scan QR and collect points quickly.'],['★','Redeem points for practical rewards.'],['⌖','Find verified stores near your location.'],['✓','Clean profile and policy access in-app.']],tabs:[['Login','Choose User tab, enter number, continue with OTP/social login.'],['Home','Browse category chips and featured local offers.'],['Store Detail','Open a store, view rating, offers, and scan action.'],['Profile','Manage wallet, scan history, favorites, and policy pages.']]},
       merchant:{title:'Grow Your Business with Offro',desc:'Manage stores, create deals, and grow repeat visits from one dashboard.',cta1:'Book Demo',cta2:'View  Flow',why:'Why Merchants Choose Offro',chips:['Store Management','Deals Control','Invoice & Activity',' Profile'],features:[['🏬','Manage multiple stores from one account.'],['🎯','Create and control deals in minutes.'],['📈','Drive repeat visits with reward scanning.'],['🛡','Access profile, KYC, and policy tools.']],tabs:[[' Login','Switch to  tab and sign in with registered phone.'],['My Stores','Edit store, manage QR, active status, and deal visibility.'],['My Deals','Create, update, and remove campaign offers quickly.'],['Reports/Activity','Track engagement, scans, and retention performance.']]}
@@ -258,6 +328,15 @@ align-items:flex-start;
       const d=M[mode];
       heroTitleEl.textContent=d.title; heroDescEl.textContent=d.desc; whyTitleEl.textContent=d.why;
       primaryCtaEl.textContent=d.cta1; secondaryCtaEl.textContent=d.cta2;
+      if (mode === 'merchant') {
+        primaryCtaEl.removeAttribute('data-store-link');
+        primaryCtaEl.href = 'mailto:hello@offro.app';
+        primaryCtaEl.target = '';
+      } else {
+        primaryCtaEl.setAttribute('data-store-link', '');
+        primaryCtaEl.href = '#';
+        primaryCtaEl.removeAttribute('target');
+      }
       chipsEl.innerHTML=d.chips.map(x=>`<div class='chip'>${x}</div>`).join('');
       featuresListEl.innerHTML=d.features.map(([i,t])=>`<div class='item'><div class='icon'>${i}</div><div><h3>${t.split(' ').slice(0,4).join(' ')}</h3><p>${t}</p></div></div>`).join('');
       flowCardsEl.innerHTML=d.tabs.map(([t,desc],i)=>`<article class='box'><h3>Tab ${i+1}: ${t}</h3><p>${desc}</p></article>`).join('');
