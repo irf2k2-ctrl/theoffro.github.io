@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -93,6 +96,35 @@ padding:20px;
 border-radius:12px;
 margin:25px 0;
 }
+
+
+/* OffrO website design system — aligned with the main landing page */
+:root{
+ --offro-primary:#3E5F55; --offro-mint:#CDEBD6; --offro-sage:#A9CDBA;
+ --offro-bg:#FDFBF6; --offro-text:#17231F; --offro-body:#334740;
+ --offro-line:#E6EDE7; --offro-card:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--offro-bg);color:var(--offro-text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+header{background:linear-gradient(115deg,#EAF5E9 0%,#FDFBF6 52%,#E2F1E7 100%);color:var(--offro-text);text-align:center;padding:58px 22px 48px;border-bottom:1px solid var(--offro-line)}
+header h1{margin:0 auto 10px;max-width:900px;color:var(--offro-text);font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.045em;font-weight:750}
+header p{margin:8px auto 0;max-width:760px;color:#52675E;font-size:15px}
+.container{width:min(940px,calc(100% - 36px));margin:42px auto 64px;padding:0}
+.card{background:var(--offro-card);padding:clamp(24px,5vw,48px);border:1px solid #E9EEE8;border-radius:24px;box-shadow:0 16px 45px rgba(23,35,31,.06)}
+h1,h2,h3{font-family:inherit;letter-spacing:-.025em}
+h2{color:var(--offro-primary);font-size:clamp(21px,2.4vw,27px);line-height:1.25;margin:34px 0 12px;padding:0 0 10px;border-bottom:1px solid var(--offro-line)}
+h3{color:var(--offro-primary);font-size:18px;margin:24px 0 8px}
+p,li{color:var(--offro-body);font-size:15.5px;line-height:1.8}
+ul,ol{padding-left:24px}
+li{padding:3px 0}
+a{color:var(--offro-primary);font-weight:650;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.email,.highlight{background:#EFF7EF;border:1px solid #DDECE0;border-radius:16px;padding:16px 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--offro-primary);color:#fff!important;padding:13px 23px;border-radius:999px;font-weight:700;box-shadow:0 5px 14px rgba(62,95,85,.15)}
+.btn:hover{background:#29483F;text-decoration:none}
+.footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--offro-line);text-align:center;color:#718078;font-size:13px}
+@media(max-width:600px){header{padding:42px 18px 34px}.container{width:calc(100% - 24px);margin:24px auto 42px}.card{padding:23px 19px;border-radius:18px}p,li{font-size:15px}}
 
 </style>
 
