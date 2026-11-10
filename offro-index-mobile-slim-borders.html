@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grow your local business with OffrO. Get discovered, showcase products, promote offers and connect with nearby customers.">
+  <meta name="author" content="MIB Tech Solutions">
+  <meta name="application-name" content="OffrO">
+  <meta name="keywords" content="OffrO, local businesses, merchant app, nearby stores, products, offers, QR rewards, India">
+  <title>OffrO | Help Your Local Business Get Discovered</title>
+  <link rel="canonical" href="https://theoffro.com/">
+  <link rel="icon" type="image/png" href="/offro-favicon.png">
+  <link rel="apple-touch-icon" href="/offro-favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --deep:#3E5F55; --mint:#CDEBD6; --sage:#A9CDBA; --offwhite:#FDFBF6;
+      --sand:#E7D7C8; --sage-mid:#759A89; --ink:#17231F; --body:#52665E;
+      --amber:#C78D3E; --terra:#D67858; --line:#e6eee8; --white:#fff;
+      --shadow:0 24px 70px rgba(34,67,55,.13);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--offwhite);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+    a{color:inherit}
+    .container{width:min(1180px,91%);margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(253,251,246,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(62,95,85,.10)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand img{display:block;width:156px;height:auto}
+    .navlinks{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600;color:#3d554b}
+    .navlinks a{text-decoration:none;transition:color .2s}
+    .navlinks a:hover{color:var(--sage-mid)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:14px 23px;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;transition:transform .22s,box-shadow .22s,background .22s}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(37,74,60,.17)}
+    .btn-primary{background:var(--deep);color:#fff}
+    .btn-light{background:#fff;color:var(--deep);border:1px solid #dce8df}
+    .menu-btn{display:none;border:0;background:#eaf3ec;color:var(--deep);border-radius:12px;padding:10px 13px;font-size:20px}
+    .hero{position:relative;overflow:hidden;padding:78px 0 88px;background:
+      radial-gradient(ellipse at 76% 20%,rgba(169,205,186,.48),transparent 34%),
+      radial-gradient(ellipse at 12% 90%,rgba(231,215,200,.58),transparent 32%),
+      linear-gradient(135deg,#fffdf8 0%,#f4f8f1 54%,#e3f1e7 100%)}
+    .hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(62,95,85,.10);border-radius:50%;pointer-events:none}
+    .hero:before{width:560px;height:560px;right:-150px;top:-250px}
+    .hero:after{width:390px;height:390px;right:-65px;top:-165px}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;background:rgba(205,235,214,.72);color:var(--deep);font-size:11px;letter-spacing:1.8px;font-weight:800;text-transform:uppercase}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage-mid)}
+    h1,h2,h3{font-family:Manrope,"DM Sans",sans-serif}
+    h1{font-size:clamp(42px,5.2vw,68px);line-height:1.06;letter-spacing:-3.3px;margin:24px 0 20px;max-width:650px}
+    h1 em{font-style:normal;color:var(--deep)}
+    .hero-copy{font-size:18px;line-height:1.75;color:var(--body);max-width:550px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{display:flex;align-items:center;gap:10px;margin-top:24px;color:#65786f;font-size:13px}
+    .check{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#d9eee0;color:var(--deep);font-weight:900}
+    .visual{min-height:570px;position:relative;display:flex;align-items:center;justify-content:center}
+    .visual-glow{position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(169,205,186,.65),rgba(205,235,214,.08) 68%,transparent 72%);filter:blur(4px)}
+    .phone{position:absolute;background:#111;border:4px solid #17211d;border-radius:32px;padding:4px;box-shadow:0 28px 65px rgba(22,49,39,.27);overflow:hidden}
+    .phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:24px}
+    .phone-main{width:245px;height:510px;z-index:3;transform:rotate(3deg) translate(38px,4px);animation:float 6s ease-in-out infinite}
+    .phone-side{width:210px;height:438px;z-index:2;transform:rotate(-8deg) translate(-145px,45px);animation:floatSide 7s ease-in-out infinite}
+    .float-card{position:absolute;z-index:4;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.8);border-radius:18px;padding:14px 17px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;animation:float 5s ease-in-out infinite}
+    .float-card.one{top:68px;right:-4px}.float-card.two{bottom:74px;left:2px;animation-delay:-2s}
+    .float-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#e3f2e7;color:var(--deep);font-size:20px}
+    .float-card strong{display:block;font-size:13px}.float-card small{display:block;color:#728279;font-size:11px;margin-top:3px}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-13px) rotate(3deg)}}
+    @keyframes floatSide{0%,100%{transform:translate(-145px,45px) rotate(-8deg)}50%{transform:translate(-145px,32px) rotate(-8deg)}}
+    .trust{padding:22px 0;background:#fff;border-bottom:1px solid var(--line)}
+    .trust-row{display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap;color:#5d7167;font-size:13px;font-weight:700}
+    .trust-item{display:flex;align-items:center;gap:9px}.trust-item span{color:var(--sage-mid);font-size:18px}
+    .section{padding:88px 0}
+    .section-head{text-align:center;max-width:690px;margin:0 auto 42px}
+    .kicker{color:var(--sage-mid);font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+    h2{font-size:clamp(30px,3.6vw,45px);line-height:1.15;letter-spacing:-1.7px;margin:13px 0}
+    .section-head p{color:var(--body);font-size:16px;line-height:1.7;margin:0}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .benefit{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px 22px;min-height:220px;box-shadow:0 10px 30px rgba(40,75,60,.045);transition:transform .25s,box-shadow .25s}
+    .benefit:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+    .benefit-icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:23px;margin-bottom:22px;background:#e6f3e9}
+    .benefit:nth-child(2) .benefit-icon{background:#f1e7dc}.benefit:nth-child(3) .benefit-icon{background:#e6e9f3}.benefit:nth-child(4) .benefit-icon{background:#f8e8df}
+    .benefit h3{font-size:17px;margin:0 0 9px}.benefit p{font-size:13px;line-height:1.65;color:var(--body);margin:0}
+    .how{background:linear-gradient(180deg,#f0f7f1,#fdfbf6)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+    .step{position:relative;padding:25px 22px;border-radius:20px;background:rgba(255,255,255,.78);border:1px solid #e1ece3}
+    .step-no{width:38px;height:38px;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:20px}
+    .step h3{font-size:17px;margin:0 0 9px}.step p{font-size:13px;line-height:1.65;color:var(--body);margin:0}
+    .showcase-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:60px}
+    .showcase-copy p{color:var(--body);line-height:1.8}
+    .showcase-points{display:grid;gap:15px;margin:25px 0}
+    .point{display:flex;gap:12px;align-items:flex-start}.point .check{flex:0 0 22px;margin-top:2px}
+    .showcase-images{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+    .screen-card{background:#f0e8dc;border-radius:24px;padding:12px;box-shadow:var(--shadow);overflow:hidden}
+    .screen-card:first-child{transform:translateY(28px) rotate(-2deg)}.screen-card:last-child{transform:rotate(2deg)}
+    .screen-card img{display:block;width:100%;height:auto;border-radius:16px}
+    .modes{background:#203f35;color:#fff;position:relative;overflow:hidden}
+    .modes:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid #ffffff18;right:-100px;top:-240px;box-shadow:0 0 0 70px #ffffff08,0 0 0 140px #ffffff05}
+    .modes .section-head{position:relative}.modes .section-head p{color:#c6d8ce}
+    .mode-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .mode-card{border:1px solid #ffffff25;background:#ffffff0c;border-radius:20px;padding:25px}
+    .mode-card .symbol{font-size:26px;margin-bottom:18px}.mode-card h3{font-size:18px;margin:0 0 8px;color:#fff}.mode-card p{font-size:13px;line-height:1.65;color:#c7d9d0;margin:0}
+    .cta-wrap{padding:80px 0}
+    .cta{position:relative;overflow:hidden;border-radius:30px;padding:52px;background:linear-gradient(120deg,#3E5F55,#759A89);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffffff30;border-radius:50%;right:10%;top:-210px;box-shadow:0 0 0 45px #ffffff0b,0 0 0 90px #ffffff08}
+    .cta-content{position:relative;z-index:1;max-width:650px}.cta h2{color:#fff;margin:0 0 12px}.cta p{color:#e2eee7;margin:0;line-height:1.6}
+    .cta .btn{position:relative;z-index:2;white-space:nowrap;background:#fff;color:var(--deep)}
+    footer{background:#172f28;color:#fff;padding:42px 0 25px}
+    .footer-top{display:flex;justify-content:space-between;gap:35px;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid #ffffff20}
+    .footer-brand img{width:145px;filter:none;margin-bottom:12px}
+    .footer-brand p{max-width:310px;color:#bfd0c7;font-size:13px;line-height:1.7}
+    .footer-links{display:flex;gap:18px 24px;flex-wrap:wrap;justify-content:flex-end;max-width:600px}
+    .footer-links a{color:#e3eee7;text-decoration:none;font-size:13px}.footer-links a:hover{color:var(--mint)}
+    .footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding-top:20px;color:#aebfb6;font-size:12px}
+    .social{display:flex;gap:10px}.social a{width:32px;height:32px;border-radius:50%;background:#ffffff18;display:grid;place-items:center;text-decoration:none;color:#fff;font-weight:700}
+    .modal{position:fixed;inset:0;background:rgba(14,32,26,.62);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+    .modal.open{display:flex}.modal-card{position:relative;width:min(440px,100%);background:var(--offwhite);border-radius:26px;padding:30px;box-shadow:0 25px 80px #0004;text-align:center}
+    .modal-card h2{font-size:27px;margin:0 25px 8px}.modal-card p{color:var(--body);font-size:14px;margin:0 0 22px}
+    .close{position:absolute;right:14px;top:14px;border:0;background:#e7f0e9;color:var(--deep);width:34px;height:34px;border-radius:50%;font-size:22px;cursor:pointer}
+    .store-badges{display:grid;gap:12px}.store-badge{display:flex;align-items:center;justify-content:center;gap:13px;background:#101512;color:#fff;text-decoration:none;border-radius:14px;padding:13px 18px;min-height:68px}
+    .store-badge svg{width:36px;height:36px}.badge-copy{text-align:left;line-height:1}.badge-small{display:block;font-size:11px;margin-bottom:5px}.badge-large{display:block;font-size:21px;font-weight:700}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:950px){.hero-grid{grid-template-columns:1fr;gap:20px}.hero-copy{max-width:680px}.visual{min-height:540px}.benefits,.steps{grid-template-columns:repeat(2,1fr)}.showcase-grid{grid-template-columns:1fr;gap:30px}.showcase-copy{max-width:700px}.mode-grid{grid-template-columns:1fr 1fr}.navlinks{gap:16px}}
+    @media(max-width:650px){
+      .nav{height:70px}.brand img{width:126px}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;padding:20px 5%;background:var(--offwhite);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.nav>.btn{padding:11px 15px;font-size:12px;margin-left:auto}.menu-btn{display:block}
+      .hero{padding:55px 0 45px}.hero-grid{gap:0}h1{font-size:43px;letter-spacing:-2px}.hero-copy{font-size:16px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn{width:100%}
+
+      /* Mobile hero mockup: keep both phones and floating cards inside the screen. */
+      .visual{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+        min-height:430px;
+        height:430px;
+        margin-top:12px;
+        overflow:hidden;
+        isolation:isolate;
+      }
+      .visual-glow{width:300px;height:300px;max-width:100%}
+      .phone-main{
+        width:175px;
+        height:365px;
+        left:52%;
+        top:50%;
+        right:auto;
+        bottom:auto;
+        transform:translate(-15%,-50%) rotate(3deg);
+        animation:none;
+      }
+      .phone-side{
+        width:145px;
+        height:305px;
+        left:42%;
+        top:55%;
+        right:auto;
+        bottom:auto;
+        transform:translate(-85%,-50%) rotate(-8deg);
+        animation:none;
+      }
+      .float-card{
+        max-width:78%;
+        padding:9px 10px;
+        animation:none;
+      }
+      .float-card.one{top:25px;right:0;left:auto}
+      .float-card.two{bottom:24px;left:0;right:auto}
+      .float-icon{width:32px;height:32px;flex:0 0 32px}
+      .float-card strong{font-size:10px}
+      .float-card small{font-size:9px}
+      .trust-row{gap:14px 20px;font-size:11px}.section{padding:65px 0}.benefits,.steps{grid-template-columns:1fr 1fr;gap:10px}.benefit{padding:18px 15px;min-height:205px}.benefit h3{font-size:15px}.benefit p{font-size:12px}.step{padding:18px 14px}.step h3{font-size:15px}.step p{font-size:12px}
+      .showcase-images{gap:9px}.screen-card{padding:7px;border-radius:16px}.screen-card img{border-radius:11px}.mode-grid{grid-template-columns:1fr}.mode-card{padding:20px}.cta{padding:32px 24px;display:block}.cta .btn{margin-top:22px;width:100%}.footer-top{display:block}.footer-links{justify-content:flex-start;margin-top:24px}.footer-bottom{display:block}.social{margin-top:15px}
+    }
+    @media(max-width:380px){
+      .visual{height:395px;min-height:395px}
+      .phone-main{width:158px;height:330px;left:53%}
+      .phone-side{width:130px;height:275px;left:42%}
+      .float-card{max-width:82%;padding:8px}
+      .float-card.one{top:18px}
+      .float-card.two{bottom:18px}
+    }
+
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"OffrO","url":"https://theoffro.com/","logo":"https://theoffro.com/assets/offro-logo.png","legalName":"MIB Tech Solutions","sameAs":["https://www.facebook.com/profile.php?id=61588814806447","https://www.instagram.com/offro_app","https://youtube.com/@offro_app"]}
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#" aria-label="OffrO home"><img src="/assets/offro-logo.png" alt="OffrO"></a>
+    <nav class="navlinks" id="navLinks">
+      <a href="#benefits">For Businesses</a><a href="#how">How It Works</a><a href="#app">The App</a><a href="#about">About OffrO</a>
+    </nav>
+    <button class="btn btn-primary" type="button" data-download>Register Your Business <span>↗</span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">A smarter way to grow locally</div>
+      <h1>Make your business the next <em>local favourite.</em></h1>
+      <p class="hero-copy">Get discovered by nearby customers. Showcase your products, highlight your offers and build your local presence — all with OffrO.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" type="button" data-download>Register Your Business <span>→</span></button>
+        <button class="btn btn-light" type="button" data-download>Download OffrO</button>
+      </div>
+      <div class="hero-note"><span class="check">✓</span> One app for customers, merchants and local creators.</div>
+    </div>
+    <div class="visual reveal" aria-label="Preview of the OffrO mobile app">
+      <div class="visual-glow"></div>
+      <div class="phone phone-side"><img src="/assets/customer-home.png" alt="OffrO customer home screen"></div>
+      <div class="phone phone-main"><img src="/assets/merchant-dashboard.png" alt="OffrO merchant dashboard screen"></div>
+      <div class="float-card one"><div class="float-icon">🏪</div><div><strong>Your business, visible</strong><small>Help nearby customers find you</small></div></div>
+      <div class="float-card two"><div class="float-icon">🏷️</div><div><strong>Showcase what you offer</strong><small>Products, promotions and more</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust"><div class="container trust-row">
+  <div class="trust-item"><span>✓</span> Business discovery</div><div class="trust-item"><span>✓</span> Product showcase</div><div class="trust-item"><span>✓</span> Local offers</div><div class="trust-item"><span>✓</span> QR-based rewards</div>
+</div></section>
+
+<section class="section" id="benefits">
+  <div class="container">
+    <div class="section-head reveal"><div class="kicker">Built for local businesses</div><h2>Everything you need to get noticed.</h2><p>Give your business a digital presence and make it easier for people nearby to discover what you do.</p></div>
+    <div class="benefits">
+      <article class="benefit reveal"><div class="benefit-icon">🏪</div><h3>Business Visibility</h3><p>Create your business presence and help local customers discover your store or service.</p></article>
+      <article class="benefit reveal"><div class="benefit-icon">🛍️</div><h3>Product Showcase</h3><p>Display your products and let customers explore what your business has to offer.</p></article>
+      <article class="benefit reveal"><div class="benefit-icon">🏷️</div><h3>Offers & Promotions</h3><p>Highlight deals, promotions and featured banners to catch customers’ attention.</p></article>
+      <article class="benefit reveal"><div class="benefit-icon">🎁</div><h3>QR-Based Rewards</h3><p>Encourage customer engagement through OffrO’s QR-based rewards experience.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section how" id="how">
+  <div class="container">
+    <div class="section-head reveal"><div class="kicker">Getting started is simple</div><h2>Bring your business onto OffrO.</h2><p>A straightforward way to build your presence and start connecting with your local audience.</p></div>
+    <div class="steps">
+      <article class="step reveal"><div class="step-no">01</div><h3>Join OffrO</h3><p>Download the app, choose Merchant mode and start setting up your business.</p></article>
+      <article class="step reveal"><div class="step-no">02</div><h3>Create your store</h3><p>Add your business details and establish your digital storefront.</p></article>
+      <article class="step reveal"><div class="step-no">03</div><h3>Show what you offer</h3><p>Add products, publish banners and highlight your latest offers.</p></article>
+      <article class="step reveal"><div class="step-no">04</div><h3>Reach local customers</h3><p>Make your business discoverable to people exploring nearby places.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="app">
+  <div class="container showcase-grid">
+    <div class="showcase-copy reveal">
+      <div class="kicker">Your business, in your hands</div>
+      <h2>Manage your local presence from one app.</h2>
+      <p>OffrO brings your business tools together in a simple mobile experience. Switch to Merchant mode to manage your stores and showcase your products and banners.</p>
+      <div class="showcase-points">
+        <div class="point"><span class="check">✓</span><div><strong>Manage your stores</strong><p>Keep your business information and storefront organised.</p></div></div>
+        <div class="point"><span class="check">✓</span><div><strong>Showcase products and banners</strong><p>Present your offerings with visual content.</p></div></div>
+        <div class="point"><span class="check">✓</span><div><strong>One app, multiple modes</strong><p>Customer, Merchant and Influencer experiences in one app.</p></div></div>
+      </div>
+      <button class="btn btn-primary" type="button" data-download>Get the OffrO App →</button>
+    </div>
+    <div class="showcase-images reveal">
+      <div class="screen-card"><img src="/assets/explore-screen.png" alt="OffrO explore nearby screen"></div>
+      <div class="screen-card"><img src="/assets/rewards-screen.png" alt="OffrO rewards screen"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section modes" id="about">
+  <div class="container">
+    <div class="section-head reveal"><div class="kicker" style="color:#b9d8c5">One app, multiple ways to connect</div><h2>Make OffrO yours.</h2><p>OffrO brings different local experiences together in one app. Choose the mode that fits the way you want to use it.</p></div>
+    <div class="mode-grid">
+      <article class="mode-card reveal"><div class="symbol">⌕</div><h3>Customer</h3><p>Discover nearby businesses, products, services and local offers.</p></article>
+      <article class="mode-card reveal"><div class="symbol">▣</div><h3>Merchant</h3><p>Manage your business presence, stores, products and promotional banners.</p></article>
+      <article class="mode-card reveal"><div class="symbol">✧</div><h3>Influencer</h3><p>Build your creator profile and connect with local brand collaboration opportunities.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-wrap">
+  <div class="container">
+    <div class="cta reveal"><div class="cta-content"><h2>Your business deserves to be discovered.</h2><p>Take the next step. Join OffrO and bring your business closer to local customers.</p></div><button class="btn" type="button" data-download>Register Your Business →</button></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="/assets/offro-logo.png" alt="OffrO"><p>Explore Local. Shop Smart. Earn Rewards.<br>Developed and operated by MIB Tech Solutions.</p></div>
+      <div class="footer-links"><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="privacy-policy.html">Privacy Policy</a><a href="about-us.html">About Us</a><a href="contact-us.html">Contact Us</a><a href="delete-account.html">Delete Account</a></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 OffrO. All Rights Reserved.</div><div class="social"><a href="https://www.facebook.com/profile.php?id=61588814806447" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://www.instagram.com/offro_app" target="_blank" rel="noopener" aria-label="Instagram">◎</a><a href="https://youtube.com/@offro_app" target="_blank" rel="noopener" aria-label="YouTube">▶</a></div></div>
+  </div>
+</footer>
+
+<div class="modal" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
+  <div class="modal-card">
+    <button class="close" id="closeModal" aria-label="Close">×</button>
+    <h2 id="downloadTitle">Get started with OffrO</h2>
+    <p>Download the OffrO app, select Merchant mode and create your business presence.</p>
+    <div class="store-badges">
+      <a class="store-badge" href="https://apps.apple.com/in/app/offro/id6798829235" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.48-.35C2.79 15.25 3.51 7.59 8.84 7.31c1.29.07 2.19.71 2.97.77 1.17-.24 2.29-.9 3.54-.81 1.5.12 2.63.71 3.4 1.8-3.1 1.87-2.37 5.96.47 7.1-.57 1.5-1.31 2.99-2.17 4.11ZM12.03 7.25C11.88 5.02 13.69 3.18 15.78 3c.29 2.58-2.34 4.5-3.75 4.25Z"/></svg>
+        <span class="badge-copy"><span class="badge-small">Available on the</span><span class="badge-large">App Store</span></span>
+      </a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.offro.app" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#00D7FF" d="M4.4 3.7c-.8.9-1.3 2.2-1.3 3.8v33c0 1.6.5 2.9 1.3 3.8L27.1 24 4.4 3.7Z"/><path fill="#FFEA00" d="m34.7 31.6-7.6-7.6L4.4 44.3c.9 1 2.4 1.1 3.8.3l26.5-13Z"/><path fill="#FF3D81" d="M34.7 16.4 8.2 3.4c-1.4-.7-2.9-.7-3.8.3L27.1 24l7.6-7.6Z"/><path fill="#7C4DFF" d="m34.7 16.4-7.6 7.6 7.6 7.6 9-4.5c2.6-1.3 2.6-4.9 0-6.2l-9-4.5Z"/></svg>
+        <span class="badge-copy"><span class="badge-small">GET IT ON</span><span class="badge-large">Google Play</span></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('downloadModal');
+  const openModal = () => { modal.classList.add('open'); document.body.style.overflow='hidden'; };
+  const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow=''; };
+  document.querySelectorAll('[data-download]').forEach(button => button.addEventListener('click', openModal));
+  document.getElementById('closeModal').addEventListener('click', closeModal);
+  modal.addEventListener('click', event => { if(event.target === modal) closeModal(); });
+  document.addEventListener('keydown', event => { if(event.key === 'Escape') closeModal(); });
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.textContent = isOpen ? '×' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='☰';
+  }));
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+  }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+</script>
+</body>
+</html>
